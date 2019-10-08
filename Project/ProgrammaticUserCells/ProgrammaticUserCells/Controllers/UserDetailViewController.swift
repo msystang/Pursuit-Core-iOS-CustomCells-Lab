@@ -10,16 +10,19 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
-    var nameLabel: UILabel! = {
+    var user: User!
+    
+    lazy var nameLabel: UILabel! = {
            let label = UILabel()
+        label.text = user.name.first
            return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.addSubview(nameLabel)
-//        configureConstraints()
-        // Do any additional setup after loading the view.
+        self.view.addSubview(nameLabel)
+        configureConstraints()
+        
         
         self.view.backgroundColor = .yellow
     }
