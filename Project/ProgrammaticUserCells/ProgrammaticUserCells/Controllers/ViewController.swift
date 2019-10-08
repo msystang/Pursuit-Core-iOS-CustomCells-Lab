@@ -73,9 +73,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
-       let linkingVC = storyboard.instantiateViewController(withIdentifier: "userDetail")
-       self.navigationController?.pushViewController(linkingVC, animated: true)
-        
+        let detailVC = UserDetailViewController()
+
+        self.navigationController?.pushViewController(detailVC, animated: true)
+
     }
 }

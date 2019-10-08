@@ -20,7 +20,7 @@
 		CDA0F5F72348FE9600B2E7F0 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA0F5F62348FE9600B2E7F0 /* NetworkHelper.swift */; };
 		CDA0F5F92348FEB800B2E7F0 /* UsersFetchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */; };
 		EA4D0409234D1697009FDE81 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D0407234D1697009FDE81 /* UserTableViewCell.swift */; };
-		EA4D040A234D1697009FDE81 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4D0408234D1697009FDE81 /* UserTableViewCell.xib */; };
+		EA4D0410234D21AD009FDE81 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4D040F234D21AD009FDE81 /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		CDA0F5F62348FE9600B2E7F0 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFetchingService.swift; sourceTree = "<group>"; };
 		EA4D0407234D1697009FDE81 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		EA4D0408234D1697009FDE81 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		EA4D040F234D21AD009FDE81 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 				EA4D040B234D20A6009FDE81 /* Models */,
 				EA4D040D234D20FB009FDE81 /* Controllers */,
 				EA4D040C234D20F0009FDE81 /* Views */,
-				EA4D0408234D1697009FDE81 /* UserTableViewCell.xib */,
 				EA4D040E234D2104009FDE81 /* Supporting Files */,
 				CDA0F5DB2348F74F00B2E7F0 /* Info.plist */,
 			);
@@ -143,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA0F5D12348F74900B2E7F0 /* ViewController.swift */,
+				EA4D040F234D21AD009FDE81 /* UserDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4D040A234D1697009FDE81 /* UserTableViewCell.xib in Resources */,
 				CDA0F5F32348FB8200B2E7F0 /* randomUserSampleResponse.json in Resources */,
 				CDA0F5DA2348F74F00B2E7F0 /* LaunchScreen.storyboard in Resources */,
 				CDA0F5D72348F74F00B2E7F0 /* Assets.xcassets in Resources */,
@@ -263,6 +262,7 @@
 			files = (
 				CDA0F5F02348F7E300B2E7F0 /* User.swift in Sources */,
 				CDA0F5D22348F74900B2E7F0 /* ViewController.swift in Sources */,
+				EA4D0410234D21AD009FDE81 /* UserDetailViewController.swift in Sources */,
 				CDA0F5F52348FE8800B2E7F0 /* AppError.swift in Sources */,
 				CDA0F5CE2348F74900B2E7F0 /* AppDelegate.swift in Sources */,
 				EA4D0409234D1697009FDE81 /* UserTableViewCell.swift in Sources */,
