@@ -9,17 +9,24 @@ class ViewController: UIViewController {
    }
     
     lazy var userTableView: UITableView = {
-        let theTableView = UITableView()
-        theTableView.dataSource = self
-        theTableView.delegate = self
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
     
 //        let nib = UINib(nibName: "UserTableViewCell", bundle: nil)
 //        theTableView.register(nib, forCellReuseIdentifier: "userTVC")
 //
-        theTableView.register(UserTableViewCell.self, forCellReuseIdentifier: "userTVC")
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: "userCell")
         
-        return theTableView
+        return tableView
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(userTableView)
+        setConstraints()
+        loadUsers()
+    }
     
     private func loadUsers() {
         UsersFetchingService.manager.getUsers { (result) in
@@ -34,22 +41,15 @@ class ViewController: UIViewController {
         }
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         self.userTableView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.userTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.userTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        self.userTableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.userTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-    }
-    
-    override func viewDidLoad() {
-        self.view.addSubview(userTableView)
-        setConstraints()
-        loadUsers()
-        super.viewDidLoad()
-       
-    }
+        NSLayoutConstraint.activate([
+            self.userTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.userTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.userTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.userTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)])
+        }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -59,14 +59,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
-        guard let cell = self.userTableView.dequeueReusableCell(withIdentifier: "userTVC", for: indexPath) as? UserTableViewCell else {return UITableViewCell()}
+        
+        guard let cell = self.userTableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
+        
         cell.nameLabel.text = "\(user.name.title) \(user.name.first) \(user.name.last)"
+        
         return cell
     }
    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -76,5 +76,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
        let linkingVC = storyboard.instantiateViewController(withIdentifier: "userDetail")
        self.navigationController?.pushViewController(linkingVC, animated: true)
-       }
-   }
+        
+    }
+}

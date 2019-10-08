@@ -94,14 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				CDA0F5FA2349003E00B2E7F0 /* Networking */,
-				CDA0F5CD2348F74900B2E7F0 /* AppDelegate.swift */,
-				CDA0F5CF2348F74900B2E7F0 /* SceneDelegate.swift */,
-				CDA0F5D12348F74900B2E7F0 /* ViewController.swift */,
-				EA4D0407234D1697009FDE81 /* UserTableViewCell.swift */,
+				EA4D040B234D20A6009FDE81 /* Models */,
+				EA4D040D234D20FB009FDE81 /* Controllers */,
+				EA4D040C234D20F0009FDE81 /* Views */,
 				EA4D0408234D1697009FDE81 /* UserTableViewCell.xib */,
-				CDA0F5EF2348F7E300B2E7F0 /* User.swift */,
-				CDA0F5D62348F74F00B2E7F0 /* Assets.xcassets */,
-				CDA0F5D82348F74F00B2E7F0 /* LaunchScreen.storyboard */,
+				EA4D040E234D2104009FDE81 /* Supporting Files */,
 				CDA0F5DB2348F74F00B2E7F0 /* Info.plist */,
 			);
 			path = ProgrammaticUserCells;
@@ -124,6 +121,41 @@
 				CDA0F5F82348FEB800B2E7F0 /* UsersFetchingService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		EA4D040B234D20A6009FDE81 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5EF2348F7E300B2E7F0 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA4D040C234D20F0009FDE81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA4D0407234D1697009FDE81 /* UserTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA4D040D234D20FB009FDE81 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5D12348F74900B2E7F0 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA4D040E234D2104009FDE81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA0F5CF2348F74900B2E7F0 /* SceneDelegate.swift */,
+				CDA0F5CD2348F74900B2E7F0 /* AppDelegate.swift */,
+				CDA0F5D62348F74F00B2E7F0 /* Assets.xcassets */,
+				CDA0F5D82348F74F00B2E7F0 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
